@@ -14,12 +14,16 @@ for expense in expenses.list:
 # Ordnet die Elemente nach Häufigkeit in der Übergebenen Liste als key:value bzw. category:count
 spending_counter = collections.Counter(spending_categories)
 
+# Gibt die 5 häufigsten Treffer zurück
 top5 = spending_counter.most_common(5)
 
+# Macht aus der Liste zwei -> 1.Liste Keys | 2.Liste Values
 categories, count = zip(*top5)
 
+### Plotten der Werte als Grafik
 fig, ax = plt.subplots()
 
 ax.bar(categories, count)
 ax.set_title("# of Purchases by Category")
 plt.show()
+###
